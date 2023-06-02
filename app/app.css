@@ -1,0 +1,15 @@
+.modal {
+    float: right;
+    direction: flex;
+}
+.logo {
+    float: right;
+    size:10px;
+}
+.h {
+    font-weight: bold;
+    font-size: x-large;
+    text-align:center;
+    align-items: center;
+    justify-content: space-around;
+}
