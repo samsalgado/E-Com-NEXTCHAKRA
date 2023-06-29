@@ -1,6 +1,6 @@
 "use client";
 import "./app.css";
-import logo from './money.png';
+import logo from './btcforgirls.png';
 import Shop from "./shop";
 import shop from './shop.png';
 import Shop2 from "./shop2";
@@ -14,7 +14,7 @@ const Home = () => {
       <Box boxSize={'sm'} position={"absolute"} top={"0px"} right={"0px"} float={"right"} height={"auto"} width={"150px"}>
         <Image  src={logo} />
         </Box>
-        <h1 className=" h">Welcome</h1>
+        <h1 className=" h">Bitcoin For Females</h1>
 
         <Flex alignItems={"center"}>
         <Box mt={"100px"} top={"50%"} left={"50%"}  ml={"350px"} width={"55%"}
