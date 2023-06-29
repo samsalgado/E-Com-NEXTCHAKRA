@@ -13,3 +13,18 @@
     align-items: center;
     justify-content: space-around;
 }
+.shop {
+        font-weight: bold;
+            font-size: x-large;
+            text-align: center;
+            align-items: center;
+}
+h2 {
+            font-size: x-large;
+                text-align: center;
+}
+.slide1 {
+    margin-right: 100px;
+    padding-right: 50px;
+    padding-left: 10%;
+}

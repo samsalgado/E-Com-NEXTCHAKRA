@@ -1,7 +1,9 @@
 "use client";
 import "./app.css";
 import logo from './money.png';
+import Shop from "./shop";
 import shop from './shop.png';
+import Shop2 from "./shop2";
 import { Box, Flex } from "@chakra-ui/react";
 import Image from "next/image";
 import NavBar from "./Header";
@@ -22,6 +24,13 @@ const Home = () => {
           />
         </Box>
         </Flex>
+        <Box mt={"100px"}>
+        <Shop />
+        </Box>
+        <Box mt={"100px"}>
+        <Shop2 />
+        </Box>
+
     </header>
   )
 }
