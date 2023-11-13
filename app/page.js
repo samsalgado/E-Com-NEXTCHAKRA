@@ -3,6 +3,7 @@ import "./app.css";
 import logo from './btcforgirls.png';
 import Shop from "./shop";
 import shop from './shop.png';
+import Modal from "./modal";
 import Shop2 from "./shop2";
 import { Box, Flex } from "@chakra-ui/react";
 import Image from "next/image";
@@ -26,9 +27,14 @@ const Home = () => {
         </Flex>
         <Box mt={"100px"}>
         <Shop />
+        <div className="center-div">
+        <Modal />
+        </div>
         </Box>
         <Box mt={"100px"}>
-        <Shop2 />
+        <Shop2 
+        />
+        
         </Box>
 
     </header>

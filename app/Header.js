@@ -1,7 +1,6 @@
 import React from "react";
 import Home from "./page"
 import { Link, Box, Flex, Text, Stack, useDisclosure, ModalOverlay, ModalContent } from "@chakra-ui/react";
-import Modal from "./modal";
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -62,7 +61,7 @@ const MenuLinks = ({ isOpen }) => {
       >
         <MenuItem to="localhost:3000" element={<Home />}>Home</MenuItem>
         <MenuItem to="/cart">Shop </MenuItem>
-        <Modal />
+        
       </Stack>
     </Box>
   );

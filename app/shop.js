@@ -13,42 +13,42 @@ const Shop = () => {
   [
     {
       id: 1,
-      name: "Save The Tatas Set",
+      name: "Save The Tatas",
       pic: Images.savethetatas,
       pic2: Images.savethetataspanties,
       price: 99.99
     },
     {
       id: 2,
-      name: 'Purple Flowers Set',
+      name: 'Purple Flowers',
       pic1: Images.purpleflowers,
-      pic3:Images.purplepanties,
+      pic2:Images.purplepanties,
       price:69.99
     },
     {
       id:3,
       name: 'Dark Wave',
       pic1:Images.darkwavebralette,
-      pic3: Images.darkflowers,
+      pic2: Images.darkflowers,
       price:29.99
     },
     {
       id:4,
-      name:'Red Beauty Set',
+      name:'Red Beauty',
       pic1:Images.red,
-      pic3:Images.redbow,
+      pic2:Images.redbow,
       price:49.99
     },
         {
       id: 5,
       name: "Like A Sunflower",
-      pic: Images.sunflowersfront,
+      pic1: Images.sunflowersfront,
       pic2: Images.sunflowersfront,
       price: 39.99
     },    {
       id: 6,
       name: "Kimonos",
-      pic: Images.kimono,
+      pic1: Images.kimono,
       pic2: Images.orange_kimono,
       price: 89.99
     }
@@ -66,15 +66,17 @@ const Shop = () => {
 
       {product.map((val, key) => {
         return (
-          <div key={key}>
+          <div key={key} >
             <h2>{val.name}</h2>
             <h2>${val.price}</h2>
           <Box>
-            <Carousel width={"30vmin"} 
+            <Carousel width={"40vmin"} 
 >
-            <Image
-          src={val.pic}
+          
+          <Image 
+          src={val.pic1}
           className='slide1'
+          width={"30vmin"}
 
 
           
@@ -82,30 +84,22 @@ const Shop = () => {
           <Image
           src={val.pic2}
           className='slide1'
+          width={"30vmin"}
         
           />
-          </Carousel>
-</Box>
-            <Carousel width={"30vmin"}
->
-            <Image
-          src={val.pic1}
-          className='slide1'
-
+         
 
           
-          />
-          <Image
-          src={val.pic3}
-          className='slide1'
-          />
+         
+          
           </Carousel>
+</Box>
+          
             </div>
-
             
-
-        )
+       )
       })}
+      
     </Flex>
     </>
   )
