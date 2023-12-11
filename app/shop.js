@@ -1,5 +1,8 @@
-import React from 'react'
+import {useRef, useMemo} from 'react'
 import { Flex, Box } from '@chakra-ui/react'
+import React, { useCallback } from "react";
+import { Button, ButtonGroup } from '@chakra-ui/react'
+import QuickPinchZoom, { make3dTransformValue } from "react-quick-pinch-zoom";
 import Images from "./Images";
 import "./Images";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -7,14 +10,14 @@ import { Carousel } from 'react-responsive-carousel';
 //             for line 34 and other price lines.(change eventually to https://www.youtube.com/watch?v=tEMrD9t85v4 in case that button is price.)
 
 import Image from "next/image";
-import {useMemo} from 'react';
+
 const Shop = () => {
   const product = useMemo(() =>
   [
     {
       id: 1,
       name: "Save The Tatas",
-      pic: Images.savethetatas,
+      pic1: Images.savethetatas,
       pic2: Images.savethetataspanties,
       price: 99.99
     },
@@ -57,11 +60,28 @@ const Shop = () => {
   
   []
   )
+  const imgRef = useRef();
+  const onUpdate = useCallback(({ x, y, scale }) => {
+    const { current: img } = imgRef;
+    // check if image exists
+    if (img) {
+      const value = make3dTransformValue({ x, y, scale });
+      img.style.setProperty("transform", value);
+    }
+  }, []);
 
   return (
     <>
     <h1 className='shop'>Shop</h1>
     <br></br>
+     <QuickPinchZoom
+      onUpdate={onUpdate}
+      tapZoomFactor={2}
+      zoomOutFactor={4}
+      inertiaFriction={0}
+      maxZoom={10}
+      minZoom={1}
+    >
     <Flex>
 
       {product.map((val, key) => {
@@ -70,13 +90,18 @@ const Shop = () => {
             <h2>{val.name}</h2>
             <h2>${val.price}</h2>
           <Box>
-            <Carousel width={"40vmin"} 
+            <Carousel width={"35vmin"}
+            
 >
+
           
           <Image 
           src={val.pic1}
           className='slide1'
-          width={"30vmin"}
+          width={"15vmin"}
+          ref={imgRef}
+          
+          
 
 
           
@@ -84,15 +109,20 @@ const Shop = () => {
           <Image
           src={val.pic2}
           className='slide1'
-          width={"30vmin"}
+          width={"15vmin"}
+          ref={imgRef}
         
           />
+
          
 
           
-         
+
           
           </Carousel>
+          <Button className='Cart'>Add to Cart</Button>
+
+          
 </Box>
           
             </div>
@@ -101,6 +131,8 @@ const Shop = () => {
       })}
       
     </Flex>
+     </QuickPinchZoom>
+
     </>
   )
 }

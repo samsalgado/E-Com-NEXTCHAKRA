@@ -26,16 +26,14 @@ const Home = () => {
         </Box>
         </Flex>
         <Box mt={"100px"}>
+          <br></br>
         <Shop />
-        <div className="center-div">
-        <Modal />
-        </div>
         </Box>
         <Box mt={"100px"}>
         <Shop2 
         />
-        
         </Box>
+                
 
     </header>
   )

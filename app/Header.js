@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "./modal";
 import Home from "./page"
 import { Link, Box, Flex, Text, Stack, useDisclosure, ModalOverlay, ModalContent } from "@chakra-ui/react";
 const NavBar = (props) => {
@@ -60,7 +61,7 @@ const MenuLinks = ({ isOpen }) => {
         pt={[4, 4, 0, 0]}
       >
         <MenuItem to="localhost:3000" element={<Home />}>Home</MenuItem>
-        <MenuItem to="/cart">Shop </MenuItem>
+        <MenuItem><Modal /></MenuItem>
         
       </Stack>
     </Box>
